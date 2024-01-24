@@ -3,7 +3,9 @@
  */
 abstract class Abstraction {
 
-    // Abstract cannot have body but implemented by other classes
+    /* Abstract methods cannot have body but implemented by other classes
+    *  if a class has an abstract method it must be an abstract class.
+    */
     public abstract void animalSound();
 
     public void sleep(){
@@ -22,6 +24,6 @@ abstract class Abstraction {
  */
 class Sheep extends Abstraction {
     public void animalSound(){
-        System.out.println("beee beee beee beee beee beee beee beee beee beee beee!.");
+        System.out.println("beee beee beee beee beee beee beee!.");
     }
 }

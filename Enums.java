@@ -1,27 +1,24 @@
-public class Enums {
+enum  ConstantVars { // i.e it's attr are constant which is equal to final keyword but it's like a class
+    EAT,
+    SLEEP,
+    SOUND
+}
 
-    /*
-     * Enums are like classes but can't be instantiated and its attr are constants
-     */
+class TestEnums {
 
-    interface speak {
-        public void speakThree();
-    }
-
-    enum ev implements speak { // i.e list of constant which is equal to final keyword
-        EAT("Eat"),
-        SLEEP("Sleep"),
-        SOUND("Sound");
-
-        private String params;
-
-        ev (String param){
-            this.params = param;
+        // class attributes
+        ConstantVars work;
+    
+        // constructor for Main class
+        TestEnums(ConstantVars work){
+            this.work = work;
         }
 
-        @Override
-        public void speakThree() {
-            switch (this) {
+    
+
+        // using it in switch statement
+        public void speak() {
+            switch (work) {
                 case EAT:
                     System.out.println("I'm eating!.");
                     break;
@@ -35,17 +32,12 @@ public class Enums {
                     break;
             }
         }
-    }
+    
+}
 
-    // class attributes
-    final int y;
-    String firstName;
 
-    // constructor for Main class
-    public Enums(int g){
-        y = g;
-        firstName = "Shuaibu";
-    }
+// file class
+public class Enums {
 
     // methods of Main class
     public double calculate(double x, double y){
@@ -56,20 +48,20 @@ public class Enums {
         System.out.printf("Result is: %d\n", n1 - n2);
     }
 
+
     public static void main(String[] args){
         
+
+        // implement the encapsulation file here
         Encapsulation myCar = new Encapsulation();
-        // enum assignment
-        // enum assignment
-        for (ev s : ev.values()){
-            System.out.println(s.name() + ": " + s.params);
-        }
-
-
         // setters and getters
         myCar.setter("Shuaibu", 24);
         System.out.println(myCar.nameGetter());
         System.out.println(myCar.ageGetter());
+
+        // use enums constant with switch statement
+        TestEnums myEnums = new TestEnums(ConstantVars.SOUND);
+        myEnums.speak();
 
     }
 }
