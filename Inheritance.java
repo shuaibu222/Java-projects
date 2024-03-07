@@ -1,8 +1,12 @@
     public class Inheritance {
       /*
        * 'INHERITANCE'
+       * 
+       * Final classes and methods cannot be inherited
+       * Constructor can't be inherited unless super() keyword utilized
       */
-        protected String brand = "Ford"; // private which can only be accessible within the class and subclasses(which extends)
+        // private String brand = "Ford"; // private cannot be inherited
+        protected String brand = "Ford";
         public void honk() {             
             System.out.println("Tuut, tuut!");
         }

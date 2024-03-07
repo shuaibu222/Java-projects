@@ -1,29 +1,35 @@
-/*
- * Abstract class cannot be instantiated as a new instance.
- */
 abstract class Abstraction {
+    abstract void abstractMethod(); // Abstract method
 
-    /* Abstract methods cannot have body but implemented by other classes
-    *  if a class has an abstract method it must be an abstract class.
-    */
-    public abstract void animalSound();
-
-    public void sleep(){
-        System.out.println("Zzz");
-    }
-
-    public static void main(String[] args) {
-        Sheep sh = new Sheep();
-        sh.animalSound();
-        sh.sleep();
+    void concreteMethod() { // Concrete method
+        System.out.println("Concrete method in abstract class");
     }
 }
 
-/**
- * Sheep
- */
-class Sheep extends Abstraction {
-    public void animalSound(){
-        System.out.println("beee beee beee beee beee beee beee!.");
+interface InterfaceExample {
+    void abstractMethod(); // Abstract method
+
+    // Compilation error: Interfaces cannot have instance variables
+    int instanceVariable = 10;
+}
+
+class ConcreteClass extends Abstraction {
+
+    public static void main(String[] args) {
+        
+    }
+
+    @Override
+    void abstractMethod() {
+        System.out.println("Concrete implementation of abstract method");
+    }
+}
+
+// Compilation error: ConcreteClass must implement abstractMethod
+class ConcreteClassWithInterface implements InterfaceExample {
+    // Concrete implementation of abstractMethod
+    @Override
+    public void abstractMethod() { // can't reduce the visibility of the method either the same or greater
+        System.out.println("Concrete implementation of abstract method");
     }
 }

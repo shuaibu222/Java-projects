@@ -1,42 +1,42 @@
 public class Encapsulation {
 
     /* 
-    * Accessible only within the class since it's private
-    * (i.e 'ENCAPSULATION': accessing private attr from other classes using getters and setters
-    which give more control over the attributes and improves security).
+    * 'ENCAPSULATION': accessing private attr from other classes using getters and setters
+    which give more control over the attributes and improves security.
     */
-    private String name;
-    private int age;
+        private double balance; // Encapsulated attribute
+    
+        // Method to deposit money
+        public void deposit(double amount) {
+            if (amount > 0) {
+                balance += amount;
+                System.out.println(amount + " deposited successfully.");
+            }
+        }
+    
+        // Method to withdraw money
+        public void withdraw(double amount) {
+            if (balance >= amount && amount > 0) {
+                balance -= amount;
+                System.out.println(amount + " withdrawn successfully.");
+            } else {
+                System.out.println("Insufficient balance.");
+            }
+        }
+    
+        // Getter method to access balance
+        public double getBalance() {
+            return balance;
+        }
 
-    // it's possible to access private attributes if we utilize getters and setters.
+        public static void main(String[] args) {
 
-    // Getters
-    public String nameGetter(){
-        return name;
+            // Usage
+            Encapsulation account = new Encapsulation();
+            account.deposit(1300);
+            account.withdraw(500);
+            System.out.println("Current balance: " + account.getBalance());
+        }
     }
-    public int ageGetter(){
-        return age;
-    }
+    
 
-    // Setters
-    public void setter(String name, int age){
-        this.name = name;
-        this.age = age;
-    }
-
-    // Methods
-    public void fullThrottle(){
-        System.out.println("The car is running fast as it can!.");
-    }
-
-    public void speed(int maxSpeed){
-        System.out.printf("Max speed is: %d\n", maxSpeed);
-    }
-
-    // Main entry point to be executed
-    public static void main(String[] args) {
-        Encapsulation myCar = new Encapsulation();
-        myCar.fullThrottle();
-        myCar.speed(200);
-    }
-}

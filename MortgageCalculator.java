@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class MorgageCalculator {
+public class MortgageCalculator {
 
     /*
      * We calculate annual interest. Since it's in percentage,

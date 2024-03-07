@@ -1,7 +1,16 @@
 /*
- * We are trying to achieve 'POLYMORPHISM': ability of an object to take many forms.
+ * 'POLYMORPHISM': ability of an object to take many forms.
  * 
- * Here we use animalSound() from animal class to all other classes with different message.
+ * Types:
+ * 
+ * 1) Compile-time/static polymorphism: is where class has multiple constructors 
+ * with different types or return types(i.e Method Overloading).
+ * 
+ * 2) Runtime Polymorphism: is where sub-class overrides the a method from super-class(i.e Method Overriding)
+ * with the help of dynamic method dispatch
+ * 
+ * final keyword prevents overriding methods and inheritance
+ * 
  */
 
 public class Polymorphism {

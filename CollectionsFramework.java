@@ -1,16 +1,36 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
 
-public class JavaDSA {
+public class CollectionsFramework {
     public static void main(String[] args) {
+        // String[] colors = new String[5];
+        // colors[0] = "green";
+        // colors[1] = "red";
+        // colors[2] = "blue";
+
+        // Arrays.stream(colors).forEach(System.out::println);
+
+        // Stack
+        Stack<Integer> stack = new Stack<>();
+        stack.add(1);
+        stack.add(2);
+        stack.add(6);
+        System.out.println(stack.size());
+        System.out.println(stack.peek());
+
         // RESIZABLE ARRAY
         // Arraylist implementation
-        // ArrayList<String> cars = new ArrayList<String>();
+        // List<String> cars = new ArrayList<String>();
         // cars.add("Volvo");
         // cars.add("BMW");
         // cars.add("Honda");
         // System.out.println(cars);
         // Collections.sort(cars);
         // System.out.println(cars);
+
+        // cars.forEach(System.out::println);
 
         // LIST WITH ADDRESS
         // LinkedList implementation
@@ -107,20 +127,20 @@ public class JavaDSA {
         // int p = num.peek();
         // System.out.println(p);
 
-        Queue<Integer> num = new ArrayDeque<>(); // ArrayDeque is a class that implements Queue
-        num.add(1);
-        num.add(2);
-        num.add(3);
-        num.add(4);
-        num.add(5);
-        num.add(6);
+        // Queue<Integer> num = new ArrayDeque<>(); // ArrayDeque is a class that implements Queue
+        // num.add(1);
+        // num.add(2);
+        // num.add(3);
+        // num.add(4);
+        // num.add(5);
+        // num.add(6);
 
-        System.out.println(num);
-        num.remove();
-        System.out.println(num);
-        // return head of the element
-        int po = num.poll();
-        System.out.println(po);
+        // System.out.println(num);
+        // num.remove();
+        // System.out.println(num);
+        // // return head of the element
+        // int po = num.poll();
+        // System.out.println(po);
 
     }
 }

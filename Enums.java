@@ -1,67 +1,43 @@
-enum  ConstantVars { // i.e it's attr are constant which is equal to final keyword but it's like a class
-    EAT,
-    SLEEP,
-    SOUND
+/*
+ * Enums in Java are a special data type that allows for a variable to be a set of predefined constants. 
+ * They provide a way to define collections of constants, making code more readable and maintainable.
+ */
+enum Day {
+    // Define constants for days of the week
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
 }
 
-class TestEnums {
-
-        // class attributes
-        ConstantVars work;
-    
-        // constructor for Main class
-        TestEnums(ConstantVars work){
-            this.work = work;
-        }
-
-    
-
-        // using it in switch statement
-        public void speak() {
-            switch (work) {
-                case EAT:
-                    System.out.println("I'm eating!.");
-                    break;
-                case SLEEP:
-                    System.out.println("I'm sleeping!.");
-                    break;
-                case SOUND:
-                    System.out.println("Woooooooooooooooow!.");
-                    break;
-                default:
-                    break;
-            }
-        }
-    
-}
-
-
-// file class
 public class Enums {
+    public static void main(String[] args) {
+        // Using enums in Java
+        Day today = Day.MONDAY;
 
-    // methods of Main class
-    public double calculate(double x, double y){
-        return x + y;
-    }
-
-    static void minus(int n1, int n2){
-        System.out.printf("Result is: %d\n", n1 - n2);
-    }
-
-
-    public static void main(String[] args){
-        
-
-        // implement the encapsulation file here
-        Encapsulation myCar = new Encapsulation();
-        // setters and getters
-        myCar.setter("Shuaibu", 24);
-        System.out.println(myCar.nameGetter());
-        System.out.println(myCar.ageGetter());
-
-        // use enums constant with switch statement
-        TestEnums myEnums = new TestEnums(ConstantVars.SOUND);
-        myEnums.speak();
-
+        // Switch-case statement with enums
+        switch (today) {
+            case MONDAY:
+                System.out.println("Today is Monday.");
+                break;
+            case TUESDAY:
+                System.out.println("Today is Tuesday.");
+                break;
+            case WEDNESDAY:
+                System.out.println("Today is Wednesday.");
+                break;
+            case THURSDAY:
+                System.out.println("Today is Thursday.");
+                break;
+            case FRIDAY:
+                System.out.println("Today is Friday.");
+                break;
+            case SATURDAY:
+                System.out.println("Today is Saturday.");
+                break;
+            case SUNDAY:
+                System.out.println("Today is Sunday.");
+                break;
+            default:
+                System.out.println("Invalid day.");
+                break;
+        }
     }
 }
