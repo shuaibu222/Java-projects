@@ -71,7 +71,7 @@ public class MortgageCalculator {
             // check for valid integer
             while (!scanner.hasNextInt()) {
                 System.out.println("It must be whole number");
-                System.out.print("Loan Amount(Principal $1k - $1m): ");
+                System.out.print("Period(Years): ");
                 scanner.next();
             }
 
@@ -89,7 +89,7 @@ public class MortgageCalculator {
              // check for valid integer
             while (!scanner.hasNextInt()) {
                 System.out.println("It must be whole number");
-                System.out.print("Loan Amount(Principal $1k - $1m): ");
+                System.out.print("Interest Rate(Annual): ");
                 scanner.next();
             }
 

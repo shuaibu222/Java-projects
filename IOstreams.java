@@ -4,7 +4,7 @@ import java.nio.file.Path;
 public class IOstreams {
 
     public static void main(String[] args) {
-        Path path = Path.of("/home/shuaibu/Downloads/test.txt");
+        Path path = Path.of("/home/shuaibu/Downloads/text.txt");
         
         try {
             String s = Files.readString(path);

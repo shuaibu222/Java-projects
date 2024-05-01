@@ -1,28 +1,3 @@
-/*
- * What is a Stack?
-
-    A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. It means that the element which is inserted last will be the first one to be removed.
-    Operations on a Stack:
-
-        Push: Adds an element to the top of the stack.
-        Pop: Removes the top element of the stack.
-        Peek: Returns the top element of the stack without removing it.
-        isEmpty: Checks if the stack is empty.
-        size: Returns the number of elements in the stack.
-
-    Time Complexity Analysis:
-
-        Push: O(1)
-        Pop: O(1)
-        Peek: O(1)
-        isEmpty: O(1)
-        size: O(1)
-
-    Space Complexity:
-
-    The space complexity of a stack is O(n), where n is the number of elements stored in the stack.
- */
-
 package DSA;
 
 public class Stack {
@@ -36,17 +11,22 @@ public class Stack {
         top = -1;
     }
 
-    public void push(int item) {
+    public void push(int data) {
         if (isFull()) {
             System.out.println("OverFlow\nProgram Terminated\n");
             System.exit(1);
         }
-        System.out.println("Inserting item: " + item);
+
+        System.out.println("Inserting item: " + data);
+
         /*
-         * The program first increment ++top and then assign the result to the var top; then access the element in the array
-            e.g. if top = -1 then(++top) == 0; then 0 == top; then add the inserted item to the array
+         * e.g. 0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9
+         * 
+         * increment top++ before finding it in the array by 1 == 10
+         * then add the data to the incremented, i.e. stackArr[top] == 10(i.e the data)
          */
-        stackArr[++top] = item;
+
+        stackArr[++top] = data;
     }
 
     public int pop() {
@@ -56,9 +36,10 @@ public class Stack {
         }
 
         /*
-         * the stack first decrements the top variable (stackArr[top]).
-         * then moves the top pointer down to the next element in the stack
-         * This is done using top--
+         * e.g. 0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10
+         * 
+         * return the value of stackArr[top] == 10
+         * then decrement by one == 9
          */
 
         return stackArr[top--];
@@ -79,7 +60,7 @@ public class Stack {
 
     public void printStack() {
         for (int i = 0; i <= top; i++) {
-            System.out.println("`Item " + stackArr[i]);
+            System.out.println("Item: " + stackArr[i]);
         }
     }
 

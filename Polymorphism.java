@@ -6,7 +6,7 @@
  * 1) Compile-time/static polymorphism: is where class has multiple constructors 
  * with different types or return types(i.e Method Overloading).
  * 
- * 2) Runtime Polymorphism: is where sub-class overrides the a method from super-class(i.e Method Overriding)
+ * 2) Runtime Polymorphism: is where sub-class overrides the method from super-class(i.e Method Overriding)
  * with the help of dynamic method dispatch
  * 
  * final keyword prevents overriding methods and inheritance
@@ -24,7 +24,33 @@ public class Polymorphism {
         cat.animalSound();
         cat.eatFood();
         goat.animalSound();
+
+        // Method overloading(i.e compile-time polymorphism)
+        InnerPolymorphism innerWithoutParameter = new InnerPolymorphism();
+        System.out.println(innerWithoutParameter.getter());
+        InnerPolymorphism innerWithParameter = new InnerPolymorphism(20);
+        System.out.println(innerWithParameter.getter());
+    
     }
+}
+
+/**
+ * InnerPolymorphism
+ */
+class InnerPolymorphism {
+
+    private int value;
+
+    InnerPolymorphism() {}
+
+    InnerPolymorphism(int ivalue) {
+        this.value = ivalue;
+    }
+
+    public int getter() {
+        return value;
+    }
+    
 }
 
 

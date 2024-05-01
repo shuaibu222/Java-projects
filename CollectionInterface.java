@@ -16,6 +16,7 @@ public class CollectionInterface {
         // Removing an element from the Collection
         names.remove("Bob");
 
+
         // Checking if an element is present in the Collection
         if (names.contains("Charlie")) {
             System.out.println("Charlie is present in the collection.");
